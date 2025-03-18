@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage("compile") {
             steps {
-                sh "mvn compile"
+                 withMaven {
+                    sh "mvn compile"
+                }
             }
         }
     }
